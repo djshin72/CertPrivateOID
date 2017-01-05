@@ -52,8 +52,7 @@ public class PrivateKeyOIDCheck {
 	}
 
 	public static PrivateKey getPrivateKey(String file) {
-		// 1. 개인키 파일 읽어오기
-		
+			
 		try {
 			byte[] encodedKey = null;
 			FileInputStream fis = null;
@@ -75,7 +74,7 @@ public class PrivateKeyOIDCheck {
 			//System.out.println("EncodedKey : " + ByteUtils.toHexString(encodedKey));
 			//1.2.840.113549.1.5.13
 					
-			// 2. 개인카 파일 분석하기
+		
 			EncryptedPrivateKeyInfo encryptedPrivateKeyInfo = new EncryptedPrivateKeyInfo(encodedKey);
 			System.out.println("6. Encrypted PrivateKey Info(OID)   	        : " + encryptedPrivateKeyInfo.getAlgName());
 			
