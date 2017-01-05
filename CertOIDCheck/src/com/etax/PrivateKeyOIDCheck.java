@@ -28,6 +28,8 @@ public class PrivateKeyOIDCheck {
 		
 		//PublicKey publicKey = getPublicKey("signCert.der");
 		//getPrivateKey("signPri.key");
+		
+		// Ω√¿€
 	}
 	
 	public static PublicKey getPublicKey(String file) throws Exception {
