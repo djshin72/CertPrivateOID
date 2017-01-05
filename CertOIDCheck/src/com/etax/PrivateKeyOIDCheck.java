@@ -20,11 +20,11 @@ public class PrivateKeyOIDCheck {
 
 	public static void main(String[] args) throws Exception {
 		
-		getPublicKey("C:/temp/cert/signCert_dj.der");
-		getPrivateKey("C://temp//cert//signPri_dj.key");
+		//getPublicKey("C:/temp/cert/signCert_dj.der");
+		//getPrivateKey("C://temp//cert//signPri_dj.key");
 		
-		//getPublicKey("signCert_dj.der");
-		//getPrivateKey("signPri_dj.key");
+		getPublicKey("signCert_yj.der");
+		getPrivateKey("signPri_yj.key");
 		
 		//PublicKey publicKey = getPublicKey("signCert.der");
 		//getPrivateKey("signPri.key");
