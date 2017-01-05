@@ -24,7 +24,7 @@
              <fileset dir="${dir.jar}">
                <include name="signCert_yj.der"/>
                <include name="signPri_yj.keyr"/>
-              </fileset>
+              </fileset> 
          </jar>
      </target>
  
