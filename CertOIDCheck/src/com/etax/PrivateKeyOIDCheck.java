@@ -20,14 +20,15 @@ public class PrivateKeyOIDCheck {
 
 	public static void main(String[] args) throws Exception {
 		
-		getPublicKey("C:/temp/cert/signCert_dj.der");
-		getPrivateKey("C://temp//cert//signPri_dj.key");
+		//getPublicKey("C:/temp/cert/signCert_dj.der");
+		//getPrivateKey("C://temp//cert//signPri_dj.key");
 		
-		//getPublicKey("signCert_dj.der");
-		//getPrivateKey("signPri_dj.key");
+		getPublicKey("SignCert_yj.der");
+		getPrivateKey("SignPri_yj.key");
 		
 		//PublicKey publicKey = getPublicKey("signCert.der");
 		//getPrivateKey("signPri.key");
+		
 	}
 	
 	public static PublicKey getPublicKey(String file) throws Exception {
@@ -52,8 +53,7 @@ public class PrivateKeyOIDCheck {
 	}
 
 	public static PrivateKey getPrivateKey(String file) {
-		// 1. 개인키 파일 읽어오기
-		
+			
 		try {
 			byte[] encodedKey = null;
 			FileInputStream fis = null;
@@ -75,7 +75,7 @@ public class PrivateKeyOIDCheck {
 			//System.out.println("EncodedKey : " + ByteUtils.toHexString(encodedKey));
 			//1.2.840.113549.1.5.13
 					
-			// 2. 개인카 파일 분석하기
+		
 			EncryptedPrivateKeyInfo encryptedPrivateKeyInfo = new EncryptedPrivateKeyInfo(encodedKey);
 			System.out.println("6. Encrypted PrivateKey Info(OID)   	        : " + encryptedPrivateKeyInfo.getAlgName());
 			
