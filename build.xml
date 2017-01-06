@@ -5,7 +5,7 @@
      <property name="dir.jar"     value="${dir.build}/jar"/>
 	
      <property name="main-class"  value="com.etax.PrivateKeyOIDCheck"/>
-	 <property name="dir.cert"  	  value="src/com/etax/"/>
+     <property name="dir.cert"    value="${dir.src}/com/etax/"/>
  
      <target name="clean">
          <delete dir="${dir.build}"/>
