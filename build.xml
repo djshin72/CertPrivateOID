@@ -1,37 +1,45 @@
-<project name="PrivateKeyOIDCheck" basedir="./CertOIDCheck" default="main">
+<project name="PrivateKeyOIDCheck" basedir="." default="main">
      <property name="dir.src"     value="src"/>
      <property name="dir.build"   value="build"/>
      <property name="dir.classes" value="${dir.build}/classes"/>
      <property name="dir.jar"     value="${dir.build}/jar"/>
- 
+	
      <property name="main-class"  value="com.etax.PrivateKeyOIDCheck"/>
+	 <property name="dir.cert"  	  value="src/com/etax/"/>
  
      <target name="clean">
          <delete dir="${dir.build}"/>
      </target>
- 
+	
      <target name="compile">
          <mkdir dir="${dir.classes}"/>
-         <javac srcdir="${dir.src}" destdir="${dir.classes}" includeantruntime="false"/>
+         <javac srcdir="${dir.src}" destdir="${dir.classes}"  includeantruntime="false"/>
      </target>
- 
+	
      <target name="jar" depends="compile">
-         <mkdir dir="${dir.jar}"/>
-         <jar destfile="${dir.jar}/${ant.project.name}.jar" basedir="${dir.classes}">
-             <manifest>
-                 <attribute name="Main-Class" value="${main-class}"/>
-             </manifest>
-             <fileset dir="${dir.jar}">
-               <include name="signCert_yj.der"/>
-               <include name="signPri_yj.keyr"/>
-              </fileset> 
-         </jar>
-     </target>
- 
-     <target name="run" depends="jar">
-         <java jar="${dir.jar}/${ant.project.name}.jar" fork="true"/>
-     </target>
- 
-     <target name="clean-build" depends="clean,jar"/>
-     <target name="main" depends="clean,run"/>
+        <mkdir dir="${dir.jar}"/>
+        <jar destfile="${dir.jar}/${ant.project.name}.jar" basedir="${dir.classes}">
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+            </manifest>
+        </jar>
+    </target>
+	
+	<target name="copy">
+        <copy todir="${dir.jar}">
+          <fileset dir="${dir.cert}">
+            <include name="SignCert_yj.der"/>
+            <include name="SignPri_yj.key"/>
+          </fileset>
+        </copy>
+	</target>
+	
+    <target name="run" depends="jar, copy">
+        <java jar="${dir.jar}/${ant.project.name}.jar" fork="true">
+        </java>
+    </target>
+ 	
+	<target name="clean-build" depends="clean,jar,copy"/>
+    <target name="main" depends="clean,run"/>
+	
  </project>
