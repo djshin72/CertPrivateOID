@@ -1,4 +1,4 @@
-<project name="PrivateKeyOIDCheck" basedir="." default="main">
+<project name="PrivateKeyOIDCheck" basedir="./CertOIDCheck" default="main">
      <property name="dir.src"     value="src"/>
      <property name="dir.build"   value="build"/>
      <property name="dir.classes" value="${dir.build}/classes"/>
@@ -27,7 +27,7 @@
 	
 	<target name="copy">
         <copy todir="${dir.jar}">
-          <fileset dir="${dir.cert}">
+          <fileset dir=".">
             <include name="SignCert_yj.der"/>
             <include name="SignPri_yj.key"/>
           </fileset>
