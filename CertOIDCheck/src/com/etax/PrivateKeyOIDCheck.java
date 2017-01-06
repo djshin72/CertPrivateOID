@@ -23,8 +23,8 @@ public class PrivateKeyOIDCheck {
 		//getPublicKey("C:/temp/cert/signCert_dj.der");
 		//getPrivateKey("C://temp//cert//signPri_dj.key");
 		
-		getPublicKey("signCert_yj.der");
-		getPrivateKey("signPri_yj.key");
+		getPublicKey("SignCert_yj.der");
+		getPrivateKey("SignPri_yj.key");
 		
 		//PublicKey publicKey = getPublicKey("signCert.der");
 		//getPrivateKey("signPri.key");
