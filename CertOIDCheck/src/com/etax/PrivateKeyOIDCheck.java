@@ -71,10 +71,6 @@ public class PrivateKeyOIDCheck {
 				if (bos != null) try {bos.close();} catch(IOException ie) {}
 				if (fis != null) try {fis.close();} catch(IOException ie) {}
 			}
-			
-			//System.out.println("EncodedKey : " + ByteUtils.toHexString(encodedKey));
-			//1.2.840.113549.1.5.13
-					
 		
 			EncryptedPrivateKeyInfo encryptedPrivateKeyInfo = new EncryptedPrivateKeyInfo(encodedKey);
 			System.out.println("6. Encrypted PrivateKey Info(OID)   	        : " + encryptedPrivateKeyInfo.getAlgName());
